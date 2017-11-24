@@ -15,10 +15,14 @@
     with_items:
       - p6880880_121010_Linux-x86-64.zip
       - p26636004_122010_Linux-x86-64.zip
-      - ocm.rsp
+
+  - name: copy rsp and sql files
+    copy: src=/home/oracle/ansible/{{ item }} dest={{ patch_dir }} owner=oracle group=oinstall mode=0644
+    with_items:
       - startup_upg.sql
       - startup.sql
       - shutdown.sql
+      - ocm.rsp
 
   - name: install opatch in database home
     action: unarchive src={{ patch_dir }}/p6880880_121010_Linux-x86-64.zip dest={{ oracle_home }} remote_src=yes
