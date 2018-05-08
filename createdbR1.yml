@@ -1,10 +1,10 @@
 ---
-- hosts: oralab4
+- hosts: oralab2
   vars:
     oracle_base: /u01/app/oracle
     oracle_home: /u01/app/oracle/product/12.1.0.2/db_1/
     patch_dir: /u01/stage
-	sid: cdb2
+    sid: cdb3
   remote_user: oracle
   tasks:
 
