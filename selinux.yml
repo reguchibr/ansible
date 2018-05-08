@@ -1,0 +1,5 @@
+---
+- hosts: oralab2
+  tasks:
+    - name: change selinux
+      action: selinux policy=targeted state=permissive
